@@ -42,5 +42,21 @@ namespace GtMotive.Estimate.Microservice.Api.DependencyInjection
 
             return app;
         }
+
+        public static IApplicationBuilder MapEndpoints(this IApplicationBuilder app, IEndpointRouteBuilder endpointRouteBuilder)
+        {
+            var endpoints = app?.ApplicationServices.GetRequiredService<IEnumerable<IFeatureModule>>();
+            if (endpoints is null)
+            {
+                return app;
+            }
+
+            foreach (var endpoint in endpoints)
+            {
+                endpoint.AddRoutes(endpointRouteBuilder);
+            }
+
+            return app;
+        }
     }
 }
