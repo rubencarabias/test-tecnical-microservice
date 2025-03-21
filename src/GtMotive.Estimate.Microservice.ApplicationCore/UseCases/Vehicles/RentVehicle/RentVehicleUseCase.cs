@@ -10,7 +10,10 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RentV
     /// <summary>
     /// Use case to rent a vehicle.
     /// </summary>
-    public class RentVehicleUseCase(IVehicleRepository vehicleRepository, IReservationRepository reservationRepository, IRentVehicleOutputPort outputPort)
+    public class RentVehicleUseCase(
+        IVehicleRepository vehicleRepository,
+        IReservationRepository reservationRepository,
+        IRentVehicleOutputPort outputPort)
     {
         private readonly IVehicleRepository _vehicleRepository = vehicleRepository ?? throw new ArgumentNullException(nameof(vehicleRepository));
         private readonly IReservationRepository _reservationRepository = reservationRepository ?? throw new ArgumentNullException(nameof(reservationRepository));

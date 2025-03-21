@@ -8,11 +8,12 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.Regis
     /// <summary>
     /// Use case to register a vehicle.
     /// </summary>
-    public class RegisterVehicleUseCase(IVehicleRepository vehicleRepository) : IUseCase<RegisterVehicleInput>
+    public class RegisterVehicleUseCase(
+        IVehicleRepository vehicleRepository,
+        IRegisterVehicleOutputPort outputPort) : IUseCase<RegisterVehicleInput>
     {
         private readonly IVehicleRepository _vehicleRepository = vehicleRepository;
-
-        private IRegisterVehicleOutputPort _registerVehicleOutputPort;
+        private IRegisterVehicleOutputPort _registerVehicleOutputPort = outputPort;
 
         /// <summary>
         /// Sets the output port.

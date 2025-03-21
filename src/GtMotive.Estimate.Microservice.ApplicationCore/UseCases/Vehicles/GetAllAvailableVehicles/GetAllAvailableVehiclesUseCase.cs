@@ -7,11 +7,12 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.GetAl
     /// <summary>
     /// Use case to get all available vehicles.
     /// </summary>
-    public class GetAllAvailableVehiclesUseCase(IVehicleRepository vehicleRepository) : IUseCase<GetAllAvailableVehiclesInput>
+    public class GetAllAvailableVehiclesUseCase(
+        IVehicleRepository vehicleRepository,
+        IGetAllAvailableVehiclesOutputPort outputPort) : IUseCase<GetAllAvailableVehiclesInput>
     {
         private readonly IVehicleRepository _vehicleRepository = vehicleRepository;
-
-        private IGetAllAvailableVehiclesOutputPort _getAllAvailableVehiclesOutputPort;
+        private IGetAllAvailableVehiclesOutputPort _getAllAvailableVehiclesOutputPort = outputPort;
 
         /// <summary>
         /// Sets the output port.
