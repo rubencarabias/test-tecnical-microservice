@@ -28,5 +28,12 @@ namespace GtMotive.Estimate.Microservice.Domain.Repositories
         /// <param name="vehicleId">The ID of the vehicle to rent.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation, with a boolean result indicating success or failure.</returns>
         Task<bool> RentVehicleAsync(VehicleId vehicleId);
+
+        /// <summary>
+        /// Return a vehicle.
+        /// </summary>
+        /// <param name="vehicleId">The ID of the vehicle to return.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation, with a boolean result indicating success or failure.</returns>
+        Task<bool> ReturnVehicleAsync(VehicleId vehicleId);
     }
 }

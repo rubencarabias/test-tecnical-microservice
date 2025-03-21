@@ -36,5 +36,15 @@ namespace GtMotive.Estimate.Microservice.Domain.Aggregates
         /// Gets the date and time when the vehicle was returned.
         /// </summary>
         public DateTime? ReturnedAt { get; private set; } = default!;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Reservation"/> class.
+        /// </summary>
+        /// <param name="returnedAt">The date and time when the vehicle was returned.</param>
+        public void MarkAsReturned(DateTime returnedAt)
+        {
+            Status = ReservationStatus.Returned;
+            ReturnedAt = returnedAt;
+        }
     }
 }

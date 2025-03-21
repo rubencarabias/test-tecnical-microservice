@@ -25,5 +25,24 @@ namespace GtMotive.Estimate.Microservice.Infrastructure.MongoDb
 
             return await _reservations.Find(filter).FirstOrDefaultAsync();
         }
+
+        public async Task<Reservation> GetReservationByIdAsync(Guid reservationId)
+        {
+            var filter = Builders<Reservation>.Filter.Eq(r => r.Id, reservationId);
+            return await _reservations.Find(filter).FirstOrDefaultAsync();
+        }
+
+        public async Task UpdateAsync(Reservation reservation)
+        {
+            ArgumentNullException.ThrowIfNull(reservation);
+
+            var filter = Builders<Reservation>.Filter.Eq(r => r.Id, reservation.Id);
+
+            var update = Builders<Reservation>.Update
+                .Set(r => r.Status, reservation.Status)
+                .Set(r => r.ReturnedAt, reservation.ReturnedAt);
+
+            await _reservations.UpdateOneAsync(filter, update);
+        }
     }
 }

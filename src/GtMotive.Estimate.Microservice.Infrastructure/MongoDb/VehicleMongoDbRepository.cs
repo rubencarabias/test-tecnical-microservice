@@ -18,23 +18,11 @@ namespace GtMotive.Estimate.Microservice.Infrastructure.MongoDb
             await _vehicles.InsertOneAsync(vehicle);
         }
 
-        public async Task<IReadOnlyList<Vehicle>> GetAllAsync()
-        {
-            var vehicles = await _vehicles.Find(FilterDefinition<Vehicle>.Empty).ToListAsync();
-            return vehicles.AsReadOnly();
-        }
-
         public async Task<IReadOnlyList<Vehicle>> GetAllAvailableVehiclesAsync()
         {
             var filter = Builders<Vehicle>.Filter.Eq(v => v.IsAvailable, true);
             var vehicles = await _vehicles.Find(filter).ToListAsync();
             return vehicles.AsReadOnly();
-        }
-
-        public async Task<Vehicle> GetByIdAsync(VehicleId vehicleId)
-        {
-            var filter = Builders<Vehicle>.Filter.Eq(v => v.Id, vehicleId);
-            return await _vehicles.Find(filter).FirstOrDefaultAsync();
         }
 
         public async Task<bool> RentVehicleAsync(VehicleId vehicleId)
