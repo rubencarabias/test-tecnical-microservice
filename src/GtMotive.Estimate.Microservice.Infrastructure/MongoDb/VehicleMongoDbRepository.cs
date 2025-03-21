@@ -48,5 +48,11 @@ namespace GtMotive.Estimate.Microservice.Infrastructure.MongoDb
             var result = await _vehicles.UpdateOneAsync(filter, update);
             return result.ModifiedCount > 0;
         }
+
+        public async Task<Vehicle> GetVehicleByIdAsync(VehicleId vehicleId)
+        {
+            var filter = Builders<Vehicle>.Filter.Eq(v => v.Id, vehicleId);
+            return await _vehicles.Find(filter).FirstOrDefaultAsync();
+        }
     }
 }
