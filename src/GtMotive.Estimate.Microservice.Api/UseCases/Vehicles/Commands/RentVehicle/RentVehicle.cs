@@ -17,7 +17,8 @@ namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RentVehi
                 async (RentVehicleRequest command, ISender mediator, CancellationToken cancellationToken) =>
                 {
                     var presenter = await mediator.Send(command, cancellationToken);
-                    return Results.StatusCode((int)presenter.ActionResult.GetType().GetProperty("StatusCode").GetValue(presenter.ActionResult));
+
+                    return presenter is null ? Results.NoContent() : Results.Ok(presenter.ActionResult);
                 })
                 .WithName(nameof(RentVehicle))
                 .WithTags("Vehicles")
