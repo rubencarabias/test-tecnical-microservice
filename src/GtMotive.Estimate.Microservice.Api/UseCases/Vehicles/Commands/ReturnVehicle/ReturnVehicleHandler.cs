@@ -1,5 +1,4 @@
-﻿using GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RentVehicle;
-using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RentVehicle;
+﻿using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.ReturnVehicle;
 using MediatR;
 using System;
 using System.Threading;
@@ -7,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.ReturnVehicle
 {
-    public class ReturnVehicleHandler(RentVehicleUseCase useCase, RentVehiclePresenter presenter) : IRequestHandler<RentVehicleRequest, IWebApiPresenter>
+    public class ReturnVehicleHandler(
+        ReturnVehicleUseCase useCase,
+        ReturnVehiclePresenter presenter)
+        : IRequestHandler<ReturnVehicleRequest, IWebApiPresenter>
     {
-        private readonly RentVehicleUseCase _useCase = useCase;
-        private readonly RentVehiclePresenter _presenter = presenter;
+        private readonly ReturnVehicleUseCase _useCase = useCase;
+        private readonly ReturnVehiclePresenter _presenter = presenter;
 
-        public async Task<IWebApiPresenter> Handle(RentVehicleRequest request, CancellationToken cancellationToken)
+        public async Task<IWebApiPresenter> Handle(ReturnVehicleRequest request, CancellationToken cancellationToken)
         {
             ArgumentNullException.ThrowIfNull(request);
 
-            var input = new RentVehicleInput
+            var input = new ReturnVehicleInput
             {
-                CustomerId = Guid.Parse(request.CustomerId),
-                VehicleId = Guid.Parse(request.VehicleId)
+                ReservationId = Guid.Parse(request.ReservationId)
             };
 
             _useCase.SetOutputPort(_presenter);
