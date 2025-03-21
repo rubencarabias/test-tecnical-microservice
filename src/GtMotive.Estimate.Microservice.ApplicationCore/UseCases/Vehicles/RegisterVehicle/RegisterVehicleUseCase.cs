@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Inputs;
-using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Outputs;
-using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Ports;
 using GtMotive.Estimate.Microservice.Domain.Entities.Vehicles;
 using GtMotive.Estimate.Microservice.Domain.Repositories;
 

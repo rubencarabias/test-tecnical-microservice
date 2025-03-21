@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Outputs
+namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle
 {
     /// <summary>
     /// Output for the RegisterVehicle use case.

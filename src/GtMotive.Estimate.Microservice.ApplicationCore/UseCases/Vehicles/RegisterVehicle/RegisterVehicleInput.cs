@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Inputs
+namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle
 {
     /// <summary>
     /// Input message for the RegisterVehicle use case.
