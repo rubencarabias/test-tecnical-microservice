@@ -11,8 +11,7 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.Regis
     /// <summary>
     /// Use case to register a vehicle.
     /// </summary>
-    public class RegisterVehicleUseCase(
-        IVehicleRepository vehicleRepository) : IUseCase<RegisterVehicleInput>
+    public class RegisterVehicleUseCase(IVehicleRepository vehicleRepository) : IUseCase<RegisterVehicleInput>
     {
         private readonly IVehicleRepository _vehicleRepository = vehicleRepository;
 
