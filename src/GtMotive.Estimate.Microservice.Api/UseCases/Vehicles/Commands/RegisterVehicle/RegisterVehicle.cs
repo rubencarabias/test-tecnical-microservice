@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 
-namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.CreateVehicle
+namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RegisterVehicle
 {
     public class RegisterVehicle : IFeatureModule
     {

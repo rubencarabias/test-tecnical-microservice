@@ -1,4 +1,4 @@
-﻿using GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.RegisterVehicle;
+﻿using GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RegisterVehicle;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Ports;
 using Microsoft.Extensions.DependencyInjection;
 

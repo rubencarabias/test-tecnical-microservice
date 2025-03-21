@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using MediatR;
 
-namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.CreateVehicle
+namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RegisterVehicle
 {
     /// <summary>
     /// Command to create a vehicle.

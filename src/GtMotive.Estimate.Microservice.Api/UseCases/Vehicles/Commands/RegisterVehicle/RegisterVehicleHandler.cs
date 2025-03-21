@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.RegisterVehicle;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Inputs;
 using MediatR;
 
-namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.CreateVehicle
+namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RegisterVehicle
 {
     public class RegisterVehicleHandler(RegisterVehicleUseCase useCase, RegisterVehiclePresenter presenter) : IRequestHandler<RegisterVehicleRequest, IWebApiPresenter>
     {
