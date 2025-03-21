@@ -24,7 +24,7 @@ namespace GtMotive.Estimate.Microservice.Infrastructure.MongoDb
             return vehicles.AsReadOnly();
         }
 
-        public async Task<IReadOnlyList<Vehicle>> GetAvailableVehiclesAsync()
+        public async Task<IReadOnlyList<Vehicle>> GetAllAvailableVehiclesAsync()
         {
             var filter = Builders<Vehicle>.Filter.Eq(v => v.IsAvailable, true);
             var vehicles = await _vehicles.Find(filter).ToListAsync();

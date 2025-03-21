@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using GtMotive.Estimate.Microservice.Domain.Entities.Vehicles;
 
 namespace GtMotive.Estimate.Microservice.Domain.Repositories
@@ -14,5 +15,11 @@ namespace GtMotive.Estimate.Microservice.Domain.Repositories
         /// <param name="vehicle">Vehiculo.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         Task AddAsync(Vehicle vehicle);
+
+        /// <summary>
+        /// Get all vehicles.
+        /// </summary>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        Task<IReadOnlyList<Vehicle>> GetAllAvailableVehiclesAsync();
     }
 }
