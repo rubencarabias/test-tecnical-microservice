@@ -6,21 +6,21 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 
-namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.CreateVehicle
+namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.CreateVehicle
 {
-    public class CreateVehicle : IFeatureModule
+    public class RegisterVehicle : IFeatureModule
     {
         public void AddRoutes(IEndpointRouteBuilder app)
         {
             app.MapPost(
                 "/vehicles",
-                async (CreateVehicleRequest command, ISender mediator, CancellationToken cancellationToken) =>
+                async (RegisterVehicleRequest command, ISender mediator, CancellationToken cancellationToken) =>
                 {
                     var presenter = await mediator.Send(command, cancellationToken);
                     return Results.StatusCode((int)presenter.ActionResult.GetType().GetProperty("StatusCode").GetValue(presenter.ActionResult));
                 })
-                .WithName(nameof(CreateVehicle))
-                .WithTags("vehicles")
+                .WithName(nameof(RegisterVehicle))
+                .WithTags("Vehicles")
                 .Produces(StatusCodes.Status200OK)
                 .Produces<ProblemDetails>(StatusCodes.Status409Conflict);
         }

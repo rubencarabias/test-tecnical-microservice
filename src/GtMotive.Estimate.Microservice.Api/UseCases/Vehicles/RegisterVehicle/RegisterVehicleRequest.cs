@@ -2,12 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using MediatR;
 
-namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.CreateVehicle
+namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.CreateVehicle
 {
     /// <summary>
     /// Command to create a vehicle.
     /// </summary>
-    public sealed record CreateVehicleRequest : IRequest<IWebApiPresenter>
+    public sealed record RegisterVehicleRequest : IRequest<IWebApiPresenter>
     {
         [Required]
         public string Model { get; set; }

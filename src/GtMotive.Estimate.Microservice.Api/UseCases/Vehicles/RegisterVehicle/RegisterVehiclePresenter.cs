@@ -1,11 +1,10 @@
-﻿using GtMotive.Estimate.Microservice.Api.UseCases;
-using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Outputs;
+﻿using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Outputs;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Ports;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GtMotive.Estimate.Microservice.Api.Vehicles.Presenters
+namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.RegisterVehicle
 {
-    public class CreateVehiclePresenter : IRegisterVehicleOutputPort, IWebApiPresenter
+    public class RegisterVehiclePresenter : IRegisterVehicleOutputPort, IWebApiPresenter
     {
         public IActionResult ActionResult { get; private set; }
 

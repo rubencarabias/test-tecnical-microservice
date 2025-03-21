@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using GtMotive.Estimate.Microservice.Api.Vehicles.Presenters;
+using GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.RegisterVehicle;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Inputs;
 using MediatR;
 
-namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.CreateVehicle
+namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.CreateVehicle
 {
-    public class CreateVehicleHandler(RegisterVehicleUseCase useCase, CreateVehiclePresenter presenter) : IRequestHandler<CreateVehicleRequest, IWebApiPresenter>
+    public class RegisterVehicleHandler(RegisterVehicleUseCase useCase, RegisterVehiclePresenter presenter) : IRequestHandler<RegisterVehicleRequest, IWebApiPresenter>
     {
         private readonly RegisterVehicleUseCase _useCase = useCase ?? throw new ArgumentNullException(nameof(useCase));
-        private readonly CreateVehiclePresenter _presenter = presenter ?? throw new ArgumentNullException(nameof(presenter));
+        private readonly RegisterVehiclePresenter _presenter = presenter ?? throw new ArgumentNullException(nameof(presenter));
 
-        public async Task<IWebApiPresenter> Handle(CreateVehicleRequest request, CancellationToken cancellationToken)
+        public async Task<IWebApiPresenter> Handle(RegisterVehicleRequest request, CancellationToken cancellationToken)
         {
             var input = new RegisterVehicleInput
             {

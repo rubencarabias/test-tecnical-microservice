@@ -1,4 +1,4 @@
-﻿using GtMotive.Estimate.Microservice.Api.Vehicles.Presenters;
+﻿using GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.RegisterVehicle;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle.Ports;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,8 +8,8 @@ namespace GtMotive.Estimate.Microservice.Api.DependencyInjection
     {
         public static IServiceCollection AddPresenters(this IServiceCollection services)
         {
-            services.AddScoped<CreateVehiclePresenter>();
-            services.AddScoped<IRegisterVehicleOutputPort, CreateVehiclePresenter>();
+            services.AddScoped<RegisterVehiclePresenter>();
+            services.AddScoped<IRegisterVehicleOutputPort, RegisterVehiclePresenter>();
 
             return services;
         }
