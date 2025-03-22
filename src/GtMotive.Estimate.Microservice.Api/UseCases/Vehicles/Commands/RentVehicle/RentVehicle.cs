@@ -14,11 +14,11 @@ namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RentVehi
         {
             app.MapPost(
                 "/vehicles/rent",
-                async (RentVehicleRequest command, ISender mediator, CancellationToken cancellationToken) =>
+                async ([FromBody] RentVehicleRequest command, ISender mediator, CancellationToken cancellationToken) =>
                 {
                     var presenter = await mediator.Send(command, cancellationToken);
 
-                    return presenter is null ? Results.NoContent() : Results.Ok(presenter.ActionResult);
+                    return presenter.ActionResult.ToMinimalApiResult();
                 })
                 .WithName(nameof(RentVehicle))
                 .WithTags("Vehicles")

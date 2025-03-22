@@ -14,11 +14,11 @@ namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.Register
         {
             app.MapPost(
                 "/vehicles",
-                async (RegisterVehicleRequest command, ISender mediator, CancellationToken cancellationToken) =>
+                async ([FromBody] RegisterVehicleRequest command, ISender mediator, CancellationToken cancellationToken) =>
                 {
                     var presenter = await mediator.Send(command, cancellationToken);
 
-                    return presenter is null ? Results.NoContent() : Results.Ok(presenter.ActionResult);
+                    return presenter.ActionResult.ToMinimalApiResult();
                 })
                 .WithName(nameof(RegisterVehicle))
                 .WithTags("Vehicles")

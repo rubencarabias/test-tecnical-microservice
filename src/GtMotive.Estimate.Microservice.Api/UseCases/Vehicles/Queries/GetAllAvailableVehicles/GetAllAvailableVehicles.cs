@@ -19,7 +19,7 @@ namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Queries.GetAllAva
                     var query = new GetAllAvailableVehiclesRequest();
                     var presenter = await mediator.Send(query, cancellationToken);
 
-                    return presenter is null ? Results.NotFound() : Results.Ok(presenter.ActionResult);
+                    return presenter.ActionResult.ToMinimalApiResult();
                 })
                 .WithName(nameof(GetAllAvailableVehicles))
                 .WithTags("Vehicles")
