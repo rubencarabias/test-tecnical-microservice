@@ -6,7 +6,7 @@ using MediatR;
 
 namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Queries.GetAllAvailableVehicles
 {
-    internal class GetAllAvailableVehiclesHandler(GetAllAvailableVehiclesUseCase useCase, GetAllAvailableVehiclesPresenter presenter) : IRequestHandler<GetAllAvailableVehiclesRequest, IWebApiPresenter>
+    public class GetAllAvailableVehiclesHandler(GetAllAvailableVehiclesUseCase useCase, GetAllAvailableVehiclesPresenter presenter) : IRequestHandler<GetAllAvailableVehiclesRequest, IWebApiPresenter>
     {
         private readonly GetAllAvailableVehiclesUseCase _useCase = useCase ?? throw new ArgumentNullException(nameof(useCase));
         private readonly GetAllAvailableVehiclesPresenter _presenter = presenter ?? throw new ArgumentNullException(nameof(presenter));

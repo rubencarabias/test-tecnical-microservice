@@ -3,7 +3,7 @@ using MediatR;
 
 namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.ReturnVehicle
 {
-    internal class ReturnVehicleRequest : IRequest<IWebApiPresenter>
+    public class ReturnVehicleRequest : IRequest<IWebApiPresenter>
     {
         [Required(ErrorMessage = "Reservationid is required.")]
         public string ReservationId { get; set; }

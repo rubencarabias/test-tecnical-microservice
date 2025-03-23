@@ -6,7 +6,7 @@ namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Queries.GetAllAva
     /// <summary>
     /// Presenter for the Get All Available Vehicles use case.
     /// </summary>
-    internal class GetAllAvailableVehiclesPresenter : IGetAllAvailableVehiclesOutputPort, IWebApiPresenter
+    public class GetAllAvailableVehiclesPresenter : IGetAllAvailableVehiclesOutputPort, IWebApiPresenter
     {
         public IActionResult ActionResult { get; private set; }
 

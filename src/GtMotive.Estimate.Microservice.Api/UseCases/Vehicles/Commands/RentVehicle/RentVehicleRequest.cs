@@ -6,7 +6,7 @@ namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RentVehi
     /// <summary>
     /// Command to rent a vehicle.
     /// </summary>
-    internal class RentVehicleRequest : IRequest<IWebApiPresenter>
+    public class RentVehicleRequest : IRequest<IWebApiPresenter>
     {
         [Required(ErrorMessage = "VehicleId is required.")]
         public string VehicleId { get; set; }

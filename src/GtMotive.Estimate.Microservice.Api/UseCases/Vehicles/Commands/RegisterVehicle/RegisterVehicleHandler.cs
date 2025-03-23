@@ -6,7 +6,7 @@ using MediatR;
 
 namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RegisterVehicle
 {
-    internal class RegisterVehicleHandler(RegisterVehicleUseCase useCase, RegisterVehiclePresenter presenter) : IRequestHandler<RegisterVehicleRequest, IWebApiPresenter>
+    public class RegisterVehicleHandler(RegisterVehicleUseCase useCase, RegisterVehiclePresenter presenter) : IRequestHandler<RegisterVehicleRequest, IWebApiPresenter>
     {
         private readonly RegisterVehicleUseCase _useCase = useCase ?? throw new ArgumentNullException(nameof(useCase));
         private readonly RegisterVehiclePresenter _presenter = presenter ?? throw new ArgumentNullException(nameof(presenter));

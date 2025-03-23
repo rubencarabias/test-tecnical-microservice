@@ -7,7 +7,7 @@ namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.Register
     /// <summary>
     /// Command to create a vehicle.
     /// </summary>
-    internal sealed record RegisterVehicleRequest : IRequest<IWebApiPresenter>
+    public sealed record RegisterVehicleRequest : IRequest<IWebApiPresenter>
     {
         [Required]
         public string Model { get; set; }

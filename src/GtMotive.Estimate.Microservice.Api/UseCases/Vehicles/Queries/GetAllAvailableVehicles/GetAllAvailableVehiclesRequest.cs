@@ -5,7 +5,7 @@ namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Queries.GetAllAva
     /// <summary>
     /// Query to get all available vehicles.
     /// </summary>
-    internal class GetAllAvailableVehiclesRequest : IRequest<IWebApiPresenter>
+    public class GetAllAvailableVehiclesRequest : IRequest<IWebApiPresenter>
     {
     }
 }
