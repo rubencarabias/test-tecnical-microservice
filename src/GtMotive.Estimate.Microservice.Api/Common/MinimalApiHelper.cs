@@ -10,10 +10,10 @@ namespace GtMotive.Estimate.Microservice.Api.Common
         {
             return actionResult switch
             {
-                OkObjectResult okObjectResult => Results.Ok(okObjectResult.Value),
-                BadRequestObjectResult badRequestObjectResult => Results.BadRequest(badRequestObjectResult.Value),
-                NotFoundObjectResult notFoundObjectResult => Results.NotFound(notFoundObjectResult.Value),
-                ObjectResult objectResult => Results.Ok(objectResult.Value),
+                OkObjectResult okObjectResult => Results.Json(new { data = okObjectResult.Value }),
+                BadRequestObjectResult badRequestObjectResult => Results.BadRequest(new { error = badRequestObjectResult.Value }),
+                NotFoundObjectResult notFoundObjectResult => Results.NotFound(new { error = notFoundObjectResult.Value }),
+                ObjectResult objectResult => Results.Json(new { data = objectResult.Value }),
                 StatusCodeResult statusCodeResult => Results.StatusCode(statusCodeResult.StatusCode),
                 _ => throw new InvalidOperationException("Unsupported action result type."),
             };
