@@ -2,7 +2,9 @@
 using Acheve.AspNetCore.TestHost.Security;
 using Acheve.TestHost;
 using GtMotive.Estimate.Microservice.Api;
+using GtMotive.Estimate.Microservice.Api.DependencyInjection;
 using GtMotive.Estimate.Microservice.Infrastructure;
+using GtMotive.Estimate.Microservice.Infrastructure.MongoDb.Settings;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,12 +30,14 @@ namespace GtMotive.Estimate.Microservice.InfrastructureTests.Infrastructure
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+
+                app.MapEndpoints(endpoints);
             });
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public static void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
 
@@ -44,6 +48,10 @@ namespace GtMotive.Estimate.Microservice.InfrastructureTests.Infrastructure
                 .WithApiControllers();
 
             services.AddBaseInfrastructure(true);
+
+            // Configuración de MongoDB
+            var mongoSetting = Configuration.GetSection("MongoDb");
+            services.Configure<MongoDbSettings>(mongoSetting.Bind);
         }
     }
 }

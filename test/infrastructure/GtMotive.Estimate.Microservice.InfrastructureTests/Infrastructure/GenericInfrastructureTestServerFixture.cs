@@ -8,13 +8,18 @@ using Microsoft.Extensions.Configuration;
 
 namespace GtMotive.Estimate.Microservice.InfrastructureTests.Infrastructure
 {
-    internal sealed class GenericInfrastructureTestServerFixture : IDisposable
+    public sealed class GenericInfrastructureTestServerFixture : IDisposable
     {
         public GenericInfrastructureTestServerFixture()
         {
             var hostBuilder = new WebHostBuilder()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseEnvironment("IntegrationTest")
+                .ConfigureAppConfiguration((context, builder) =>
+                {
+                    builder.AddJsonFile("appsettings.integration-test.json", optional: false, reloadOnChange: false);
+                    builder.AddEnvironmentVariables();
+                })
                 .UseDefaultServiceProvider(options => { options.ValidateScopes = true; })
                 .ConfigureAppConfiguration((context, builder) => { builder.AddEnvironmentVariables(); })
                 .UseStartup<Startup>();
