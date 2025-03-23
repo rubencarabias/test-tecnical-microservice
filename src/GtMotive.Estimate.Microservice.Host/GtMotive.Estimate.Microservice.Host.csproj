@@ -15,8 +15,9 @@
         <PackageReference Include="Azure.Security.KeyVault.Secrets" />
         <PackageReference Include="IdentityServer4.AccessTokenValidation" />
         <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer"  />
         <PackageReference Include="Microsoft.ApplicationInsights.Kubernetes" />
+        <PackageReference Include="Microsoft.AspNetCore.Http" />
         <PackageReference Include="Serilog.AspNetCore" />
         <PackageReference Include="Serilog.Expressions" />
         <PackageReference Include="Serilog.Settings.Configuration" />
@@ -35,6 +36,10 @@
             <UserProperties appsettings_1development_1json__JsonSchema="https://json.schemastore.org/appsettings" />
         </VisualStudio>
     </ProjectExtensions>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.Extensions.Options" />
+    </ItemGroup>
 
 
 </Project>

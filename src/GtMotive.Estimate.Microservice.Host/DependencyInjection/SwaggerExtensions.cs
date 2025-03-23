@@ -84,7 +84,6 @@ namespace GtMotive.Estimate.Microservice.Host.DependencyInjection
             {
                 if (!pathBase.IsDefault)
                 {
-                    options.SerializeAsV2 = true;
                     options.RouteTemplate = "swagger/{documentName}/swagger.json";
                     options.PreSerializeFilters.Add((document, request) =>
                     {

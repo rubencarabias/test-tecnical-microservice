@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace GtMotive.Estimate.Microservice.Domain.Entities.Vehicles
 {
@@ -11,6 +12,7 @@ namespace GtMotive.Estimate.Microservice.Domain.Entities.Vehicles
         /// Initializes a new instance of the <see cref="ManufacturingDate"/> class.
         /// </summary>
         /// <param name="value">The manufacture date value.</param>
+        [JsonConstructor]
         private ManufacturingDate(DateTime value)
         {
             Value = value;

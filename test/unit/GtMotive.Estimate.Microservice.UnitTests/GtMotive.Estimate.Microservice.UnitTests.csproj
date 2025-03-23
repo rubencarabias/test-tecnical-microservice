@@ -14,13 +14,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Moq" Version="4.16.0" />
+    <PackageReference Include="Moq" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Update="coverlet.collector" />
+    <PackageReference Update="FluentAssertions" />
+    <PackageReference Update="Microsoft.NET.Test.Sdk" />
+    <PackageReference Update="SonarAnalyzer.CSharp" >
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Update="xunit" />
+    <PackageReference Update="xunit.runner.visualstudio" >
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+      <PackageReference Update="Microsoft.Extensions.Options" />
+  </ItemGroup>
+<ItemGroup>
     <ProjectReference Include="..\..\..\src\GtMotive.Estimate.Microservice.Api\GtMotive.Estimate.Microservice.Api.csproj" />
     <ProjectReference Include="..\..\..\src\GtMotive.Estimate.Microservice.ApplicationCore\GtMotive.Estimate.Microservice.ApplicationCore.csproj" />
     <ProjectReference Include="..\..\..\src\GtMotive.Estimate.Microservice.Infrastructure\GtMotive.Estimate.Microservice.Infrastructure.csproj" />
-  </ItemGroup>
+</ItemGroup>
 
 </Project>
