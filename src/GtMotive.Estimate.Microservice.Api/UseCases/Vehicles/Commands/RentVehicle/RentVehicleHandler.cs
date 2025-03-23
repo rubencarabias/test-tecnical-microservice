@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RentVehicle
 {
-    public class RentVehicleHandler(RentVehicleUseCase useCase, RentVehiclePresenter presenter) : IRequestHandler<RentVehicleRequest, IWebApiPresenter>
+    internal class RentVehicleHandler(RentVehicleUseCase useCase, RentVehiclePresenter presenter) : IRequestHandler<RentVehicleRequest, IWebApiPresenter>
     {
         private readonly RentVehicleUseCase _useCase = useCase;
         private readonly RentVehiclePresenter _presenter = presenter;

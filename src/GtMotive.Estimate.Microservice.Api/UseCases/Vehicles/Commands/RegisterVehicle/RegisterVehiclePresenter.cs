@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.RegisterVehicle
 {
-    public class RegisterVehiclePresenter : IRegisterVehicleOutputPort, IWebApiPresenter
+    internal class RegisterVehiclePresenter : IRegisterVehicleOutputPort, IWebApiPresenter
     {
         public IActionResult ActionResult { get; private set; }
 

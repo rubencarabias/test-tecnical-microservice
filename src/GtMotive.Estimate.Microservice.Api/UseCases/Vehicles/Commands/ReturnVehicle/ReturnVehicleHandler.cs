@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GtMotive.Estimate.Microservice.Api.UseCases.Vehicles.Commands.ReturnVehicle
 {
-    public class ReturnVehicleHandler(
+    internal class ReturnVehicleHandler(
         ReturnVehicleUseCase useCase,
         ReturnVehiclePresenter presenter)
         : IRequestHandler<ReturnVehicleRequest, IWebApiPresenter>
