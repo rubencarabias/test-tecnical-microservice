@@ -32,7 +32,7 @@
 
     <ItemGroup>
       <PackageReference Update="Microsoft.Extensions.Options" />
-      <PackageReference Update="SonarAnalyzer.CSharp" >
+      <PackageReference Update="SonarAnalyzer.CSharp">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>

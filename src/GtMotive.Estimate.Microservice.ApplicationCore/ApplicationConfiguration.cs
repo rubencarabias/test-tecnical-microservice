@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.GetAllAvailableVehicles;
+using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.GetVehicleById;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RegisterVehicle;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.RentVehicle;
 using GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.ReturnVehicle;
@@ -30,6 +31,8 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore
             services.AddScoped<RentVehicleUseCase>();
 
             services.AddScoped<ReturnVehicleUseCase>();
+
+            services.AddScoped<GetVehicleByIdUseCase>();
 
             return services;
         }
