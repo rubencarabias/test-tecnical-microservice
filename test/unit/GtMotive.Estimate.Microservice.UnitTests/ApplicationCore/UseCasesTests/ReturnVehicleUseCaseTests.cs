@@ -61,7 +61,7 @@ namespace GtMotive.Estimate.Microservice.UnitTests.ApplicationCore.UseCasesTests
         }
 
         [Fact]
-        public async Task ExecuteShouldThrowDomainExceptionWheReservationIdIsInvalid()
+        public async Task ExecuteShouldThrowDomainExceptionWheReservationIdIsNotInvalid()
         {
             var input = new ReturnVehicleInput
             {
