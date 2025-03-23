@@ -63,7 +63,12 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore.UseCases.Vehicles.Retur
 
             await _reservationRepository.UpdateAsync(reservation);
 
-            _outputPort.StandardHandle(new ReturnVehicleOutput());
+            var output = new ReturnVehicleOutput
+            {
+                IsVehicleReturn = true
+            };
+
+            _outputPort.StandardHandle(output);
         }
     }
 }
