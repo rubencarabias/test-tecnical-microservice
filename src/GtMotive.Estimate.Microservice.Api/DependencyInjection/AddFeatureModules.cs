@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using GtMotive.Estimate.Microservice.Api.Common;
+using GtMotive.Estimate.Microservice.Api.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +28,8 @@ namespace GtMotive.Estimate.Microservice.Api.DependencyInjection
 
         public static IApplicationBuilder MapEndpoints(this WebApplication app, RouteGroupBuilder routeGroupBuilder = null)
         {
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
+
             var endpoints = app?.Services.GetRequiredService<IEnumerable<IFeatureModule>>();
             if (endpoints is null)
             {
