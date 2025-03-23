@@ -18,25 +18,22 @@ services:
       - ME_CONFIG_BASICAUTH_PASSWORD=admin
     depends_on:
       - mongo
-
-
-
-  # api-gt-motive:
-  #   platform: linux/amd64
-  #   image: gtmotive.estimate.microservice:latest
-  #   build:
-  #     context: .
-  #     dockerfile: src/GtMotive.Estimate.Microservice.Host/Dockerfile
-  #   ports:
-  #     - "5000:80"
-  #     - "5001:443"
-  #   environment:
-  #     - ASPNETCORE_ENVIRONMENT=Development
-  #     - MongoDb__ConnectionString=mongodb://mongo:27017
-  #     - MongoDb__MongoDbDatabaseName=GtMotive
-  #     - ASPNETCORE_hostBuilder__reloadConfigOnChange=false
-  #   depends_on:
-  #     - mongo
+      
+  api-gt-motive:
+    platform: linux/amd64
+    image: gtmotive.estimate.microservice:latest
+    build:
+      context: .
+      dockerfile: src/GtMotive.Estimate.Microservice.Host/Dockerfile
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MongoDb__ConnectionString=mongodb://mongo:27017
+      - MongoDb__MongoDbDatabaseName=GtMotive
+      - ASPNETCORE_hostBuilder__reloadConfigOnChange=false
+    depends_on:
+      - mongo
 
 volumes:
   mongo-data:
