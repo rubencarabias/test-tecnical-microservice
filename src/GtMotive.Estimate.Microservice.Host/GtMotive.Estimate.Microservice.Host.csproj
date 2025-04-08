@@ -7,6 +7,7 @@
         <NoWarn>1591</NoWarn>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+        <DockerfileContext>..\..</DockerfileContext>
     </PropertyGroup>
 
     <ItemGroup>
@@ -15,9 +16,10 @@
         <PackageReference Include="Azure.Security.KeyVault.Secrets" />
         <PackageReference Include="IdentityServer4.AccessTokenValidation" />
         <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer"  />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
         <PackageReference Include="Microsoft.ApplicationInsights.Kubernetes" />
         <PackageReference Include="Microsoft.AspNetCore.Http" />
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
         <PackageReference Include="Serilog.AspNetCore" />
         <PackageReference Include="Serilog.Expressions" />
         <PackageReference Include="Serilog.Settings.Configuration" />
